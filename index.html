@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,900;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <header class="header">
+                <h1 class="header_title">NEW <span> GAME ON</span></h1>
+                <img src="images/logo.webp" alt="logo" class="logo">
+            </header>
+            <main class="main">
+                <div class="info">
+                    <p>CATCH YOUR LUCK IN DIVER</p>
+                    <p>450% BONUS <br> ON 1ST 3 DEPOSITS <br> ₹2,50,000</p>
+                </div>
+                <div class="bonus">
+                    <p>450% <br><span>BONUS</span></p>
+                    <div class="circles left"><img src="images/circles_left.webp" alt="circles"></div>
+                    <div class="circles right"><img src="images/circles_right.webp" alt="circles"></div>
+                </div>
+            </main>
+            <footer class="footer">
+                <button class="btn">PLAY NOW</button>
+            </footer>
+        </div>
+        <div class="diver first">
+            <img src="images/diver1.webp" alt="diver">
+        </div>
+        <div class="diver second">
+            <img src="images/diver2.webp" alt="diver">
+        </div>
+    </div>
+</body>
+
+<script>
+    let wrapper = document.querySelector(".wrapper");
+
+    function adaptationElements() {
+        const aspectRatio = window.innerWidth / window.innerHeight;
+        let aspectClass;
+
+        if (aspectRatio >= 2) {
+            aspectClass = 'modificate1';
+        } else if (aspectRatio >= 1.5) {
+            aspectClass = 'modificate2';
+        } else if (aspectRatio > 1) {
+            aspectClass = 'modificate3';
+        } else {
+            aspectClass = 'modificate4';
+        }
+
+        wrapper.className = `wrapper ${aspectClass}`;
+    }
+
+    adaptationElements();
+    window.addEventListener('resize', adaptationElements);
+</script>
+</html>
